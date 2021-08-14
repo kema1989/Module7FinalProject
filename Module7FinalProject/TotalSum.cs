@@ -9,14 +9,17 @@ namespace Module7FinalProject
     class TotalSum
     {
         private static double sum = 0;
-        public static double GetSum(double price)
+        private static int counter = 0;
+        public static double GetSum(double price) //Добавляет стоимость каждого выбранного товара
         {
-            return sum + price;
+            sum += price;
+            return sum;
         }
 
-        public static double Sum()
+        public static int Counter() //Добавляет 1 к счетчику приобретаемых товаров (это учитывается при вычислении стоимости доставки)
         {
-            return GetSum(0);
+            counter++;
+            return counter;
         }
     }
 }
