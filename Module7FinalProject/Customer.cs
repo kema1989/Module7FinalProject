@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Module7FinalProject
 {
-    class Customer
+    public class Customer
     {
         private string name;
         private string address;

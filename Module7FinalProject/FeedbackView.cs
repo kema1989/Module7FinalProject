@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace Module7FinalProject
 {
-    /// <summary>
-    /// Раздел замечаний и отзывов
-    /// </summary>
-    class Feedback: Customer
+    public class FeedbackView
     {
-        public static void GiveFeedBack()
+        Customer customer;
+
+        public FeedbackView(Customer customer)
+        {
+            this.customer = customer;
+        }
+        public void Show()
         {
             Customer.NewOne();
             Console.WriteLine("Приветствуем вас в разделе замечаний и отзывов.\nОставьте любой по содержанию отзыв, для нас это очень важно.");
