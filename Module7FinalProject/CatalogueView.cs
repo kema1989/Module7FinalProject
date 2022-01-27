@@ -16,7 +16,7 @@ namespace Module7FinalProject
         public void Show()
         {
             YellowMessage.Show("Выберите категорию товаров, которые хотите просмотреть (или мб купить)");
-            Console.WriteLine("Мобильные телефоны(нажмите 1)");
+            Console.WriteLine("Мобильные телефоны (нажмите 1)");
             Console.WriteLine("Ноутбуки (нажмите 2)");
             Console.WriteLine("Бытовая техника (нажмите 3)");
             Console.WriteLine("Одежда (нажмите 4)");

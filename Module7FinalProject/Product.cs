@@ -13,6 +13,16 @@ namespace Module7FinalProject
         public abstract int Price { get; set; } //Стоимость
         public abstract string Description { get; set; } //Небольшое описание (рекламное, хехе)
 
+        public static double operator +(Product a, Product b)
+        {
+            return a.Price + b.Price;
+        }
+
+        public static double operator -(Product a, Product b)
+        {
+            return a.Price - b.Price;
+        }
+
     }
 
     public class Cellphone : Product

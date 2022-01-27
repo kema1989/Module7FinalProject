@@ -9,19 +9,22 @@ namespace Module7FinalProject
     public class Basket
     {
         public List<Product> products;
+        public double TotalCost { get; set; }
         public Basket()
         {
             products = new List<Product>();
-        }
-        public void Add(Product product)
-        {
-            products.Add(product);
+            TotalCost = 0;
         }
 
-        public void Delete(int id)
-        {
-            products.Remove(products.Find(p => p.ProductId == id));
-        }
+        //public void Add(Product product)
+        //{
+        //    products.Add(product);
+        //}
+
+        //public void Delete(int id)
+        //{
+        //    products.Remove(products.Find(p => p.ProductId == id));
+        //}
 
         public Product this[int index]
         {
