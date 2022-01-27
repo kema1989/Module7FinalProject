@@ -16,16 +16,19 @@ namespace Module7FinalProject
             TotalCost = 0;
         }
 
-        //public void Add(Product product)
-        //{
-        //    products.Add(product);
-        //}
+        public void Add(Product product)
+        {
+            products.Add(product);
+            TotalCost += product.Price;
+        }
 
-        //public void Delete(int id)
-        //{
-        //    products.Remove(products.Find(p => p.ProductId == id));
-        //}
+        public void Remove(Product product)
+        {
+            products.Remove(product);
+            TotalCost -= product.Price;
+        }
 
+        // Индексатор, который не очень то и понадобился, так, для общего развития
         public Product this[int index]
         {
             get { return products[index]; }

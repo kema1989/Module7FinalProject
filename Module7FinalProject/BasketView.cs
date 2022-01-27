@@ -16,20 +16,23 @@ namespace Module7FinalProject
         public void Show()
         {
             for(int i = 0; i < basket.products.Count; i++)
-                Console.WriteLine($"{i + 1}. {basket[i].Name}, {basket[i].Price}");
-            Console.WriteLine($"Общая сумма без учета доставки: {basket.TotalCost}");
-        }
-
-        public void Add(Product product)
-        {
-            basket.products.Add(product);
-            basket.TotalCost += product.Price;
-        }
-
-        public void Remove(Product product)
-        {
-            basket.products.Remove(product);
-            basket.TotalCost -= product.Price;
+                Console.WriteLine($"{i + 1}. {basket[i].Name}, {basket[i].Price} руб");
+            Console.WriteLine($"Общая сумма без учета доставки: {basket.TotalCost} руб");
+            GreenMessage.Show("Выбрать тип доставки и оформить заказ (введите 0)");
+            YellowMessage.Show("Удалить товар (введите его номер)");
+            RedMessage.Show("Выйти (введите 00)");
+            while (true)
+            {
+                try
+                {
+                    var id = int.Parse(Console.ReadLine());
+                    basket.Remove(basket[id]);
+                }
+                catch (Exception)
+                {
+                    RedMessage.Show("Введено некорректное значение...");
+                }
+            }
         }
     }
 }

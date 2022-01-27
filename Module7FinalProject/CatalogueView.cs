@@ -9,18 +9,39 @@ namespace Module7FinalProject
     public class CatalogueView
     {
         Basket basket;
+        List<Product> catalogue = new List<Product>()
+        {
+            new Cellphone{ProductId = 1, Name = "Apple iPhone 13", Description = "Dark Blue 128 Gb", Price = 69990},
+            new Cellphone{ProductId = 2, Name = "Oneplus 9", Description = "Violet 256 Gb", Price = 44990},
+            new Laptop{ProductId = 3, Name = "Apple Macbook Air 13\"", Description = "Rose Gold 256 Gb", Price = 89990},
+            new Furniture{ProductId = 4, Name = "Диван \"София\"", Description = "Морской бриз", Price = 37990},
+            new Clothes{ProductId = 5, Name = "Тренч Mango", Description = "Женский, XS", Price = 9990}
+        };
         public CatalogueView(Basket basket)
         {
             this.basket = basket;
         }
         public void Show()
         {
-            YellowMessage.Show("Выберите категорию товаров, которые хотите просмотреть (или мб купить)");
-            Console.WriteLine("Мобильные телефоны (нажмите 1)");
-            Console.WriteLine("Ноутбуки (нажмите 2)");
-            Console.WriteLine("Бытовая техника (нажмите 3)");
-            Console.WriteLine("Одежда (нажмите 4)");
-            RedMessage.Show("Выйти (нажмите 5)");
+            YellowMessage.Show("Чтобы положить товар в корзину введите его номер");
+            catalogue.ForEach(p => Console.WriteLine($"{p.ProductId}. {p.Name} {p.Description}|{p.Price} руб"));
+            RedMessage.Show("Выйти (нажмите 0)");
+            while (true)
+            {
+                try
+                {
+                    var id = int.Parse(Console.ReadLine());
+                    if (id == 0)
+                        return;
+                    basket.Add(catalogue[id]);
+                    GreenMessage.Show($"Вы успешно добавили {catalogue[id].Name} в корзину!");
+                }
+                catch (Exception)
+                {
+                    RedMessage.Show("Введено некорректное значение...");
+                }
+            }
+
         }
     }
 }

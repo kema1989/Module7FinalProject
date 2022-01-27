@@ -60,7 +60,7 @@ namespace Module7FinalProject
 
         protected override double DisplayCost(Basket basket)
         {
-            if()
+            return 0;
         }
     }
 }
