@@ -13,19 +13,18 @@ namespace Module7FinalProject
     class Order<TDelivery> where TDelivery : Delivery
     {
         public TDelivery Delivery;
-        public int Number { get; set; }
-        public string Description { get; set; }
+        public DeliveryView deliveryView;
         public void DisplayAddress()
         {
             Console.WriteLine();
         }
 
-        public Order(TDelivery delivery)
+        public Order(Delivery delivery)
         {
-            Delivery = delivery;
+            this.Delivery = delivery;
         }
 
-        public void DefineDeliveryType()
+        public void Confirm()
         {
 
         }

@@ -18,7 +18,14 @@ namespace Module7FinalProject
             switch (Console.ReadLine())
             {
                 case "1":
-                    
+                    Program.catalogueView.Show();
+                    break;
+                case "2":
+                    Program.basketView.Show();
+                    break;
+                case "3":
+                    Environment.Exit(0);
+                    break;
             }
         }
     }

@@ -9,8 +9,8 @@ namespace Module7FinalProject
     public abstract class Delivery
     {
         public string Address;
-        protected Basket basket;
-        protected abstract double DisplayCost(Basket basket);
+        public Basket basket;
+        public abstract double DisplayCost(Basket basket);
     }
 
     class HomeDelivery : Delivery
@@ -21,7 +21,7 @@ namespace Module7FinalProject
             this.basket = basket;
         }
 
-        protected override double DisplayCost(Basket basket)
+        public override double DisplayCost(Basket basket)
         {
             double deliveryCost = 0;
             if (basket.products.Any(p => p is Furniture))
@@ -41,7 +41,7 @@ namespace Module7FinalProject
             this.basket = basket;
         }
 
-        protected override double DisplayCost(Basket basket)
+        public override double DisplayCost(Basket basket)
         {
             if (basket.products.Count() > 5)
                 return 1000;
@@ -58,7 +58,7 @@ namespace Module7FinalProject
             this.basket = basket;
         }
 
-        protected override double DisplayCost(Basket basket)
+        public override double DisplayCost(Basket basket)
         {
             return 0;
         }
