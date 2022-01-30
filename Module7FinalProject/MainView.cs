@@ -13,7 +13,8 @@ namespace Module7FinalProject
             YellowMessage.Show("Добро пожаловать в ");
             Console.WriteLine("Посмотреть каталог товаров (нажмите 1)");
             Console.WriteLine("Заглянуть в корзину (нажмите 2)");
-            RedMessage.Show("Выйти (нажмите 3)");
+            Console.WriteLine("Оформить заказ (нажмите 3)");
+            RedMessage.Show("Выйти (нажмите 4)");
 
             switch (Console.ReadLine())
             {
@@ -24,6 +25,9 @@ namespace Module7FinalProject
                     Program.basketView.Show();
                     break;
                 case "3":
+                    Program.deliveryView.Show();
+                    break;
+                case "4":
                     Environment.Exit(0);
                     break;
             }

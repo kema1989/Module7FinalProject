@@ -5,11 +5,11 @@ namespace Module7FinalProject
     class Program
     {
         public static Basket basket;
-        //public static Delivery delivery;
 
         public static MainView mainView;
         public static CatalogueView catalogueView;
         public static BasketView basketView;
+        public static DeliveryView deliveryView;
 
         static void Main(string[] args)
         {
@@ -17,6 +17,7 @@ namespace Module7FinalProject
             mainView = new MainView();
             catalogueView = new CatalogueView(basket);
             basketView = new BasketView(basket);
+            deliveryView = new DeliveryView(basket);
 
             while (true)
             {

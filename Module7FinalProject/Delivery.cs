@@ -10,18 +10,23 @@ namespace Module7FinalProject
     {
         public string Address;
         public Basket basket;
-        public abstract double DisplayCost(Basket basket);
+        public abstract double DisplayCost();
+        public Delivery(Basket basket)
+        {
+            this.basket = basket;
+        }
     }
 
     class HomeDelivery : Delivery
     {
-        public HomeDelivery(string address, Basket basket)
+        public HomeDelivery(Basket basket):base(basket)
         {
-            this.Address = address;
+            Console.WriteLine("Введите адрес доставки");
+            this.Address = Console.ReadLine();
             this.basket = basket;
         }
 
-        public override double DisplayCost(Basket basket)
+        public override double DisplayCost()
         {
             double deliveryCost = 0;
             if (basket.products.Any(p => p is Furniture))
@@ -35,13 +40,13 @@ namespace Module7FinalProject
 
     class PickPointDelivery : Delivery
     {
-        public PickPointDelivery(string address, Basket basket)
+        public PickPointDelivery(Basket basket):base(basket)
         {
-            this.Address = address;
+            this.Address = "Пункт выдачи №100500, Энский поселок, ул. Безымянная, 100, оф. 500";
             this.basket = basket;
         }
 
-        public override double DisplayCost(Basket basket)
+        public override double DisplayCost()
         {
             if (basket.products.Count() > 5)
                 return 1000;
@@ -52,13 +57,13 @@ namespace Module7FinalProject
 
     class ShopDelivery : Delivery
     {
-        public ShopDelivery(string address, Basket basket)
+        public ShopDelivery(Basket basket):base(basket)
         {
-            this.Address = address;
+            this.Address = "г. Москва, Цветной Бульвар, 101, бутик 67А";
             this.basket = basket;
         }
 
-        public override double DisplayCost(Basket basket)
+        public override double DisplayCost()
         {
             return 0;
         }

@@ -33,8 +33,8 @@ namespace Module7FinalProject
                     var id = int.Parse(Console.ReadLine());
                     if (id == 0)
                         return;
-                    basket.Add(catalogue[id]);
-                    GreenMessage.Show($"Вы успешно добавили {catalogue[id].Name} в корзину!");
+                    basket.Add(catalogue[id - 1]);
+                    GreenMessage.Show($"Вы успешно добавили {catalogue[id - 1].Name} в корзину!");
                 }
                 catch (Exception)
                 {
