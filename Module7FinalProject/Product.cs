@@ -13,14 +13,34 @@ namespace Module7FinalProject
         public abstract int Price { get; set; }
         public abstract string Description { get; set; }
 
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
         //Перегрузка операторов, которая не понадобилась
         public static double operator +(Product a, Product b)
         {
             return a.Price + b.Price;
         }
-        public static double operator -(Product a, Product b)
+        public static bool operator ==(Product a, Product b)
         {
-            return a.Price - b.Price;
+            return a.Price == b.Price;
+        }
+
+        public static bool operator !=(Product a, Product b)
+        {
+            return a.Price != b.Price;
+        }
+
+        public static bool operator <(Product a, Product b)
+        {
+            return a.Price < b.Price;
+        }
+
+        public static bool operator >(Product a, Product b)
+        {
+            return a.Price > b.Price;
         }
     }
 
